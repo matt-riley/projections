@@ -1,0 +1,18 @@
+{
+  "*.ts": { "alternate": "{dirname}/{basename}.spec.ts" },
+  "*.spec.ts": {
+    "type": "test",
+    "alternate": "./src/{}.ts",
+    "template": [
+      "import {open}{basename|camelcase|capitalize}{close} from '{dirname}/{basename}'",
+      "",
+      "// Import Dependencies",
+      "",
+      "describe('{basename|camelcase|capitalize}', () => {",
+      "})"
+    ]
+  },
+  "*.service.ts": { "type": "service" },
+  "*.controller.ts": { "type": "controller" },
+  "*.module.ts": { "type": "module" }
+}
