@@ -1,8 +1,7 @@
 {
-  "*.ts": { "alternate": "{dirname}/{basename}.spec.ts" },
   "*.spec.ts": {
     "type": "test",
-    "alternate": "./src/{}.ts",
+    "alternate": "{dirname}/{basename}.ts",
     "template": [
       "import {open}{basename|camelcase|capitalize}{close} from '{dirname}/{basename}'",
       "",
@@ -14,5 +13,7 @@
   },
   "*.service.ts": { "type": "service" },
   "*.controller.ts": { "type": "controller" },
-  "*.module.ts": { "type": "module" }
+  "*.module.ts": { "type": "module" },
+  "*.entity.ts": { "type": "entity" },
+  "*.ts": { "type": "source", "alternate": "{dirname}/{basename}.spec.ts" }
 }
